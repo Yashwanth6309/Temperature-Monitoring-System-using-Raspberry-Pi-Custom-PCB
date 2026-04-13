@@ -13,7 +13,6 @@ A real-time embedded temperature monitoring system built with a **Raspberry Pi 4
 - [Software Requirements](#software-requirements)
 - [Installation & Setup](#installation--setup)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
 - [System Flow](#system-flow)
 - [Testing & Validation](#testing--validation)
 - [Results](#results)
@@ -120,20 +119,10 @@ After rebooting, confirm the DS18B20 is detected:
 ls /sys/bus/w1/devices/
 ```
 
-You should see a folder starting with `28-xxxx` — this confirms the sensor is recognized.
-
 ### Step 3: Clone the Repository
 
-```bash
-git clone https://github.com/your-username/temperature-monitoring-system.git
-cd temperature-monitoring-system
-```
 
 ### Step 4: Run the Program
-
-```bash
-python3 temperature_monitor.py
-```
 
 ---
 
@@ -145,7 +134,7 @@ Once running, the program will:
 2. Activate the buzzer/LED if temperature exceeds 40°C
 3. Append each reading with a timestamp to `temperature_log.csv`
 
-**Sample terminal output:**
+**Recorded output:**
 
 ```
 Temperature monitoring started. Press Ctrl+C to stop.
@@ -157,7 +146,7 @@ Temperature: 40.87 °C  ← [ALERT: Buzzer ON]
 Temperature: 38.56 °C
 ```
 
-**Sample CSV log (`temperature_log.csv`):**
+**Recorded  CSV log (`temperature_log.csv`):**
 
 ```
 2024-06-01 14:32:01,27.31
@@ -190,7 +179,7 @@ temperature-monitoring-system/
 ```
 Start
   ↓
-Check Sensor Detection (28-xxxx folder)
+Check Sensor Detection 
   ↓
 Initialize GPIO (BCM mode, Pin 18)
   ↓
@@ -198,7 +187,7 @@ Read Raw Temperature Data
   ↓
 Convert Raw Data → Celsius
   ↓
-Display on Terminal (and LCD if connected)
+Display on Terminal 
   ↓
 Check Threshold (> 40°C?)
   ├── YES → Trigger Buzzer/LED (GPIO18 HIGH)
@@ -321,10 +310,3 @@ finally:
 
 ---
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-*Built as part of academic coursework in electronics and embedded systems.*
