@@ -18,7 +18,6 @@ A real-time embedded temperature monitoring system built with a **Raspberry Pi 4
 - [Testing & Validation](#testing--validation)
 - [Results](#results)
 - [Skills Demonstrated](#skills-demonstrated)
-- [License](#license)
 
 ---
 
