@@ -51,7 +51,7 @@ The hardware is assembled on a PCB with all components properly mounted, soldere
 |---|---|
 | Raspberry Pi 4 | Central controller |
 | DS18B20 | Digital temperature sensor (1-Wire) |
-| MCP3008 *(optional)* | 8-channel 10-bit ADC (if using LM35 analog sensor) |
+| MCP3008 | 8-channel 10-bit ADC (if using LM35 analog sensor) |
 | LM35 *(optional)* | Analog temperature sensor alternative |
 | 4.7kΩ Resistor | Pull-up resistor for 1-Wire data line |
 | Buzzer / LED | Alert output on GPIO18 |
@@ -155,22 +155,6 @@ Temperature: 38.56 °C
 ```
 
 To stop the program, press `Ctrl + C`. GPIO pins are automatically cleaned up on exit.
-
----
-
-## Project Structure
-
-```
-temperature-monitoring-system/
-│
-├── temperature_monitor.py     # Main Python script
-├── temperature_log.csv        # Auto-generated data log (created on first run)
-├── images/
-│   ├── pcb_top.jpg            # PCB top view photo
-│   ├── pcb_bottom.jpg         # PCB bottom view photo
-│   └── setup.jpg              # Full hardware setup photo
-└── README.md
-```
 
 ---
 
