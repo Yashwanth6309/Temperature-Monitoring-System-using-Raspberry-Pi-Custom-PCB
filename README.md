@@ -1,6 +1,6 @@
 # 🌡️ Temperature Monitoring System
 
-A real-time embedded temperature monitoring system built with a **Raspberry Pi 4** and a **custom-designed PCB**. The system reads live temperature data, displays it, triggers alerts when a threshold is exceeded, and logs all readings to a CSV file for later analysis.
+A real-time embedded temperature monitoring system built with a **Raspberry Pi 4** and a **PCB-based hardware setup**. The system reads live temperature data, displays it, triggers alerts when a threshold is exceeded, and logs all readings to a CSV file for later analysis.
 
 ---
 
@@ -32,7 +32,7 @@ This project implements a complete temperature monitoring solution using a Raspb
 - Trigger an alert (buzzer/LED) if the temperature exceeds **40°C**
 - Log all readings with timestamps to a **CSV file**
 
-The hardware is built on a custom PCB designed in **KiCad**, making the system compact and stable for real-world deployment in labs, server rooms, or industrial environments.
+The hardware is assembled on a PCB with all components properly mounted, soldered, and tested — making the system compact and stable for real-world deployment in labs, server rooms, or industrial environments.
 
 ---
 
@@ -42,7 +42,7 @@ The hardware is built on a custom PCB designed in **KiCad**, making the system c
 - **Threshold-based alerting** — buzzer/LED activates automatically above 40°C
 - **Data logging** — timestamped CSV log for trend analysis
 - **LCD display support** — optional 16x2 LCD display output
-- **Custom PCB** — compact board with voltage regulation and sensor interface
+- **PCB-based hardware** — compact board with voltage regulation and sensor interface
 - **Long-duration stability** — validated through 12–24 hour continuous testing
 
 ---
@@ -59,7 +59,7 @@ The hardware is built on a custom PCB designed in **KiCad**, making the system c
 | Buzzer / LED | Alert output on GPIO18 |
 | 16x2 LCD *(optional)* | Local temperature display |
 | 3.3V & 5V Regulators | Voltage regulation on PCB |
-| Custom PCB | Designed in KiCad |
+| PCB | Base board for component assembly |
 | Acrylic Casing | Protective enclosure for deployment |
 
 ### Wiring (DS18B20)
@@ -77,15 +77,15 @@ DATA           →    GPIO4 (Pin 7)
 
 ## Circuit & PCB Design
 
-The PCB was designed using **KiCad** and includes:
+The PCB serves as the central hardware platform for this project. It includes:
 
 - Temperature sensor interface (DS18B20 or LM35 via MCP3008)
-- 4.7kΩ pull-up resistor for 1-Wire communication
-- 3.3V and 5V onboard voltage regulators
-- Header pins for Raspberry Pi GPIO connection
-- Compact layout for enclosed deployment
+- 4.7kΩ pull-up resistor for stable 1-Wire communication
+- 3.3V and 5V voltage regulators for consistent power supply
+- Header pins for clean GPIO connection to the Raspberry Pi
+- Compact layout suitable for enclosed deployment
 
-After fabrication, all components were hand-soldered and verified using a **multimeter** for continuity and absence of short circuits.
+All components were carefully mounted and soldered onto the PCB. After assembly, the board was tested using a **multimeter** to verify proper connectivity and confirm there were no short circuits before powering up the system.
 
 ---
 
@@ -175,9 +175,6 @@ temperature-monitoring-system/
 │
 ├── temperature_monitor.py     # Main Python script
 ├── temperature_log.csv        # Auto-generated data log (created on first run)
-├── pcb/
-│   ├── schematic.kicad_sch    # KiCad schematic file
-│   └── layout.kicad_pcb       # KiCad PCB layout file
 ├── images/
 │   ├── pcb_top.jpg            # PCB top view photo
 │   ├── pcb_bottom.jpg         # PCB bottom view photo
@@ -300,11 +297,11 @@ except KeyboardInterrupt:
 ## Skills Demonstrated
 
 - Embedded systems design (Raspberry Pi, GPIO communication)
-- PCB design and fabrication (KiCad)
+- PCB assembly, soldering, and hardware testing
 - Sensor interfacing (1-Wire protocol, DS18B20)
 - ADC integration (MCP3008 for analog sensors)
 - Python programming (file I/O, GPIO control, CSV logging)
-- Hardware testing and debugging (multimeter, calibration)
+- Hardware debugging and calibration
 - System integration and long-duration reliability testing
 
 ---
